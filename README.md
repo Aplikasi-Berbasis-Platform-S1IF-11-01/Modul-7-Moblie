@@ -35,4 +35,4 @@ Buat aplikasi sederhana bertema **“Data Mahasiswa”** dengan ketentuan:
 
 ## Output
 Aplikasi dapat berpindah halaman, menampilkan data mahasiswa, dan menampilkan notifikasi SnackBar.
-Pengumpulan seperti biasa (Folder isiannya ada sourece code, ss, dan penjelasan.md )
+## Pengumpulan seperti biasa (Folder isiannya ada sourece code, ss, dan penjelasan.md )
