@@ -31,6 +31,32 @@
 
 ---
 ## 1. Code dan Penjelasan
+### Struktur Folder 
+```
+data_mahasiswa/
+├── pubspec.yaml                    # Konfigurasi project & dependencies
+│
+└── lib/
+    ├── main.dart                   # Entry point aplikasi
+    │
+    ├── theme/
+    │   └── app_theme.dart          # Konfigurasi tema & palet warna
+    │
+    ├── models/
+    │   └── mahasiswa_model.dart    # Model data Mahasiswa
+    │
+    ├── widgets/
+    │   └── custom_widgets.dart     # Widget reusable:
+    │                               #   • CustomTextField
+    │                               #   • InfoCard
+    │                               #   • SectionHeader
+    │
+    └── pages/
+        ├── home_page.dart          # Halaman 1: Home (daftar mahasiswa)
+        ├── form_mahasiswa_page.dart # Halaman 2: Form input mahasiswa
+        └── profil_developer_page.dart # Halaman 3: Profil developer
+```
+
 ### 1.1 Code main.dart 
 ```dart
 // lib/main.dart
