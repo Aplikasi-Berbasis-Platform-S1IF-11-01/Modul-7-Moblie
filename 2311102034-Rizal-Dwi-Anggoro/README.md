@@ -1583,21 +1583,21 @@ Selain itu, widget `_buildTeknologiGrid()` digunakan untuk menampilkan teknologi
 ---
 ## 2. Hasil
 ### 2.1 Tampilan Home
-<img src="assets/home.png" alt="Logo" width="600">
+<img src="assets/home.png" alt="Logo" width="400">
 
 ### 2.2 Tampilan Form Mahasiswa
-<img src="assets/tambah-mahasiswa.png" alt="Logo" width="600">
+<img src="assets/tambah-mahasiswa.png" alt="Logo" width="400">
 
-<img src="assets/notifikasi-tambah-mahasiswa.png" alt="Logo" width="600">
+<img src="assets/notifikasi-tambah-mahasiswa.png" alt="Logo" width="400">
 
-<img src="assets/preview-tambah-mahasiswa.png" alt="Logo" width="600">
+<img src="assets/preview-tambah-mahasiswa.png" alt="Logo" width="400">
 
-<img src="assets/setelah-tambah-mahasiswa.png" alt="Logo" width="600">
+<img src="assets/setelah-tambah-mahasiswa.png" alt="Logo" width="400">
 
 ### 2.3 Tampilan Profile Developer
 
-<img src="assets/profile-1.png" alt="Logo" width="600">
+<img src="assets/profile-1.png" alt="Logo" width="400">
 
-<img src="assets/profile-2.png" alt="Logo" width="600">
+<img src="assets/profile-2.png" alt="Logo" width="400">
 
-<img src="assets/profile-3.png" alt="Logo" width="600">
+<img src="assets/profile-3.png" alt="Logo" width="400">
