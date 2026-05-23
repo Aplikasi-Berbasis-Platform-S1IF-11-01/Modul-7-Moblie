@@ -854,14 +854,19 @@ class _InfoRow extends StatelessWidget {
 ```
 
 ## Output
+
 Home Page
+
 ![Gambar1](Images/gambar1.png)
 
 Profile Developer
+
 ![Gambar2](Images/gambar2.png)
 
 Form Mahasiswa
+
 ![Gambar3](Images/gambar3.png)
 
 Data Berhasil ditambahkan & terlihat di Home Page
+
 ![Gambar4](Images/gambar4.png)
