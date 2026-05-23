@@ -8,7 +8,7 @@
   <br />
 
   <h3>MODUL 7<br>
-  MOBILE
+ NAVIGASI DAN NOTIFIKASI
   </h3>
 
   <br />
@@ -84,7 +84,7 @@ Package `google_fonts` memungkinkan penggunaan ratusan font dari Google Fonts la
 ### 8. Material Design 3
 Flutter mendukung **Material Design 3** (Material You) sebagai sistem desain bawaan. Komponen seperti `AppBar`, `ElevatedButton`, `Container`, dan `SnackBar` mengikuti panduan Material Design untuk tampilan yang konsisten dan modern. Kustomisasi dilakukan melalui `ThemeData` di `MaterialApp`.
 
-## 📄 Penjelasan File
+## Penjelasan File
 
 ### `main.dart`
 Entry point aplikasi. Berisi konfigurasi `MaterialApp` termasuk tema warna pastel pink dan pengaturan Google Fonts secara global.
@@ -854,4 +854,14 @@ class _InfoRow extends StatelessWidget {
 ```
 
 ## Output
+Home Page
+![Gambar1](Images/gambar1.png)
 
+Profile Developer
+![Gambar2](Images/gambar2.png)
+
+Form Mahasiswa
+![Gambar3](Images/gambar3.png)
+
+Data Berhasil ditambahkan & terlihat di Home Page
+![Gambar4](Images/gambar4.png)
