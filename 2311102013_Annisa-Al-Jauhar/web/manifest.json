@@ -1,0 +1,12 @@
+{
+    "name": "Data Mahasiswa",
+    "short_name": "DataMhs",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#FAF3E8",
+    "theme_color": "#8B6F47",
+    "description": "Aplikasi Data Mahasiswa",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": []
+}
