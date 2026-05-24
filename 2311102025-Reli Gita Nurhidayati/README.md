@@ -122,24 +122,9 @@ flutter run
 
 ---
 
-## F. Struktur Folder
-data_mahasiswa/
-├── lib/
-│   ├── main.dart
-│   └── screens/
-│       ├── home_screen.dart
-│       ├── form_screen.dart
-│       └── profil_screen.dart
-├── ss/
-│   ├── Logo_Telkom.png
-│   ├── 1_ss_home_modul7_flutter.png
-│   ├── 2_ss_form_mahasiswa_modul7_flutter.png
-│   └── 3_ss_profil_developer_modul7_flutter.png
-└── pubspec.yaml
 
----
 
-## G. Kesimpulan
+## F. Kesimpulan
 
 Pada praktikum modul 7 ini, saya berhasil membangun aplikasi Flutter sederhana bertema Data Mahasiswa yang terdiri dari tiga halaman, yaitu Home, Form Mahasiswa, dan Profil Developer. Melalui praktikum ini, saya lebih memahami cara kerja Navigator dalam berpindah antar halaman menggunakan `Navigator.push` dan `Navigator.pop`, serta perbedaan penggunaan `StatefulWidget` dan `StatelessWidget` dalam kondisi yang berbeda.
 
