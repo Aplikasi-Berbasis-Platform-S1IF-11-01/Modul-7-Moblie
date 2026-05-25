@@ -1824,7 +1824,7 @@ class _DataItem extends StatelessWidget {
 
 ### 1. Halaman Beranda (Home Page)
 
-![Hasil Program - Tampilan Home Page](aset/Screenshot 2026-05-25 114635.png)
+![Hasil Program - Tampilan Home Page](aset/1.png)
 
 **Deskripsi:** Halaman utama aplikasi yang menampilkan daftar data mahasiswa yang telah tersimpan. Halaman ini menggunakan *list* yang rapi untuk mempermudah pengguna melihat ringkasan data mahasiswa.
 
@@ -1832,13 +1832,13 @@ class _DataItem extends StatelessWidget {
 
 ### 2. Halaman Formulir Tambah Data
 
-![Hasil Program - Tampilan Form Input](aset/Screenshot 2026-05-25 114657.png)
+![Hasil Program - Tampilan Form Input](aset/2.png)
 
 **Deskripsi:** Halaman yang menampilkan informasi lengkap mahasiswa dalam bentuk kartu visual yang modern. Halaman ini memberikan akses cepat bagi pengguna untuk melihat rincian data dengan antarmuka yang bersih.
 
 ### 3. Halaman Detail Mahasiswa
 
-![Hasil Program - Tampilan Notifikasi SnackBar](aset/Screenshot 2026-05-25 114732.png)
+![Hasil Program - Tampilan Notifikasi SnackBar](aset/3.png)
 
 Halaman yang menampilkan informasi lengkap dari satu mahasiswa (Kartu Data)
 
@@ -1846,7 +1846,7 @@ Halaman yang menampilkan informasi lengkap dari satu mahasiswa (Kartu Data)
 
 ### 4. Tampilan SnackBar (Notifikasi Berhasil)
 
-![Hasil Program - Tampilan Profil Developer](aset/Screenshot 2026-05-25 114745.png)
+![Hasil Program - Tampilan Profil Developer](aset/4.png)
 
 **Deskripsi:** Notifikasi berupa *SnackBar* yang muncul setelah pengguna berhasil melakukan tindakan (seperti menyimpan atau mengedit data), memberikan umpan balik ( *feedback* ) instan bahwa operasi telah berhasil dilakukan.
 
@@ -1856,7 +1856,7 @@ Halaman yang menampilkan informasi lengkap dari satu mahasiswa (Kartu Data)
 
 ### 5. Halaman Profil Pengembang (Bagian Atas)
 
-![Hasil Program - Tampilan Profil Developer](aset/Screenshot 2026-05-25 114836.png)
+![Hasil Program - Tampilan Profil Developer](aset/5.png)
 
 **Deskripsi:** Bagian *header* dari halaman profil pengembang yang menampilkan foto profil/ikon, nama pengembang, dan posisi *developer* dengan latar belakang gradasi warna yang elegan.
 
@@ -1866,7 +1866,7 @@ Halaman yang menampilkan informasi lengkap dari satu mahasiswa (Kartu Data)
 
 ### 6. Halaman Profil Pengembang (Bagian Detail)
 
-![Hasil Program - Tampilan Profil Developer](aset/Screenshot 2026-05-25 114849.png)
+![Hasil Program - Tampilan Profil Developer](aset/6.png)
 
 **Deskripsi:** Bagian detail dari halaman profil yang memuat informasi biodata, kontak, dan spesifikasi aplikasi (seperti bahasa Dart dan *package* yang digunakan) dalam bentuk kartu informasi yang terstruktur.
 
