@@ -39,8 +39,6 @@
 
 ## 1. Dasar Teori
 
-# Dasar Teori
-
 Flutter adalah framework yang digunakan untuk membangun aplikasi multiplatform, termasuk aplikasi mobile Android. Flutter menggunakan bahasa pemrograman Dart dan menerapkan konsep widget sebagai komponen utama dalam pembuatan tampilan. Pada aplikasi Data Mahasiswa, beberapa widget yang digunakan antara lain `MaterialApp`, `Scaffold`, `AppBar`, `Container`, `Column`, `TextField`, `ElevatedButton`, dan `Icon`. Aplikasi ini juga menggunakan package `google_fonts` untuk memperindah tampilan teks dengan font Poppins, serta menggunakan tema warna merah maroon agar tampilan aplikasi lebih menarik dan konsisten.
 
 Dalam Flutter terdapat dua jenis widget utama yang digunakan, yaitu `StatelessWidget` dan `StatefulWidget`. `StatelessWidget` digunakan untuk halaman yang tampilannya tidak berubah, seperti halaman Home dan Profil Developer. Sementara itu, `StatefulWidget` digunakan pada halaman Tambah Data Mahasiswa karena terdapat perubahan data ketika pengguna menambah, mengubah, atau menghapus data mahasiswa. Perubahan tampilan dilakukan menggunakan `setState()`, sedangkan input dari pengguna diambil menggunakan `TextEditingController` pada field Nama, NIM, dan Kelas.
