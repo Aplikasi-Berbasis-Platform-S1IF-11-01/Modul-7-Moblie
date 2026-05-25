@@ -1,1878 +1,771 @@
 <div align="center">
 
-&#x20; <br />
+# LAPORAN PRAKTIKUM
+# APLIKASI BERBASIS PLATFORM
 
-&#x20; <h1>LAPORAN PRAKTIKUM <br>APLIKASI BERBASIS PLATFORM</h1>
+## MODUL 7 - Flutter Mobile
 
-&#x20; <br />
+<br>
 
-&#x20; <h3>MODUL 2 <br> HTML</h3>
+<img src="assets/logo.jpeg" alt="Logo" width="300">
 
-&#x20; <br />
+<br><br>
 
-&#x20; <br />
+### Disusun Oleh
 
-&#x20; <img src="assets/logo.jpeg" alt="Logo" width="300"> 
+**Nabila Shasya Sabrina**  
+**2311102039**  
+**S1 IF-11-01**
 
-&#x20; <br />
+<br>
 
-&#x20; <br />
+### Dosen Pengampu
 
-&#x20; <br />
+**Dimas Fanny Hebrasianto Permadi, S.ST., M.Kom**
 
-&#x20; <h3>Disusun Oleh :</h3>
+<br>
 
-&#x20; <p>
+### Asisten Praktikum
 
-&#x20;   <strong>Nabila Shasya Sabrina</strong><br>
+**Apri Pandu Wicaksono**  
+**Rangga Pradarrell Fathi**
 
-&#x20;   <strong>2311102039</strong><br>
+<br>
 
-&#x20;   <strong>S1 IF-11-01</strong>
-
-&#x20; </p>
-
-&#x20; <br />
-
-&#x20; <h3>Dosen Pengampu :</h3>
-
-&#x20; <p>
-
-&#x20;   <strong>Dimas Fanny Hebrasianto Permadi, S.ST., M.Kom</strong>
-
-&#x20; </p>
-
-&#x20; <br />
-
-&#x20; <br />
-
-&#x20;   <h4>Asisten Praktikum :</h4>
-
-&#x20;   <strong> Apri Pandu Wicaksono </strong> <br>
-
-&#x20;   <strong>Rangga Pradarrell Fathi</strong>
-
-&#x20; <br />
-
-&#x20; <h3>LABORATORIUM HIGH PERFORMANCE
-
-&#x20;<br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2026</h3>
+### LABORATORIUM HIGH PERFORMANCE COMPUTING
+### FAKULTAS INFORMATIKA
+### UNIVERSITAS TELKOM PURWOKERTO
+### 2026
 
 </div>
 
+---
 
+# 1. Dasar Teori
 
-\---
+## Navigator
 
+Navigator merupakan komponen yang berfungsi mengatur perpindahan antar halaman dalam aplikasi Flutter. Navigator bekerja menggunakan konsep **stack (tumpukan)**. Saat halaman baru dibuka menggunakan `Navigator.push()`, halaman tersebut akan ditambahkan ke bagian atas stack. Untuk kembali ke halaman sebelumnya digunakan `Navigator.pop()` yang akan menghapus halaman aktif dari stack.
 
+## Form
 
-\## 1. Dasar Teori
+Form digunakan untuk menerima dan mengelola data yang dimasukkan oleh pengguna. Dalam Flutter, form biasanya menggunakan widget seperti `TextField` untuk menerima input. Agar data input dapat diakses dan diproses, digunakan `TextEditingController`.
 
-\---
+## StatelessWidget
 
+`StatelessWidget` merupakan widget yang bersifat statis dan tidak berubah setelah dibuat. Widget ini tidak menyimpan state sehingga tampilannya akan tetap sama selama aplikasi berjalan. Biasanya digunakan untuk menampilkan informasi yang tidak berubah.
 
+## StatefulWidget
 
-Navigator merupakan komponen yang berfungsi mengatur perpindahan antarhalaman dalam aplikasi. Mekanisme kerjanya menggunakan konsep stack (tumpukan). Ketika pengguna membuka halaman baru, metode Navigator.push() akan menambahkan halaman tersebut ke bagian atas tumpukan. Sebaliknya, metode Navigator.pop() digunakan untuk menutup halaman yang sedang aktif sehingga pengguna dapat kembali ke halaman sebelumnya yang berada di bawahnya.
+`StatefulWidget` adalah widget yang dapat berubah sesuai interaksi pengguna atau perubahan data. Widget ini memiliki objek `State` yang digunakan untuk menyimpan data yang dapat diperbarui menggunakan `setState()`, sehingga tampilan aplikasi dapat diperbarui secara dinamis.
 
+---
 
+# 2. Tentang Aplikasi
 
-Form adalah area yang digunakan untuk menerima dan mengelola data yang dimasukkan oleh pengguna. Dalam implementasinya, form biasanya memanfaatkan widget seperti TextField untuk menampung input berupa teks. Agar data yang diinput dapat diakses, diproses, dan dikelola dengan mudah, digunakan TextEditingController sebagai penghubung antara kolom input dan program.
+## Teknologi yang Digunakan
 
+- Flutter
+- Dart
+- Material Design
+- Google Fonts (Poppins)
 
+## Fitur Aplikasi
 
-StatelessWidget merupakan jenis widget yang memiliki sifat statis, sehingga tampilannya tidak berubah setelah pertama kali dibuat. Data dan elemen yang terdapat di dalam widget ini akan tetap sama selama aplikasi berjalan karena tidak dipengaruhi oleh perubahan data maupun interaksi pengguna. Oleh karena itu, StatelessWidget umumnya digunakan untuk menampilkan informasi yang bersifat tetap, seperti halaman utama atau tampilan informasi sederhana.
+- Home Page sebagai halaman utama aplikasi.
+- Form Mahasiswa untuk menginput data mahasiswa.
+- Profil Developer untuk menampilkan informasi pengembang.
+- SnackBar sebagai notifikasi penyimpanan data.
+- Navigasi antar halaman menggunakan Navigator.
 
+## Widget yang Digunakan
 
+- StatelessWidget
+- StatefulWidget
+- Scaffold
+- AppBar
+- Container
+- Column
+- TextField
+- ElevatedButton
+- Icon
+- SnackBar
+- Navigator
 
-StatefulWidget adalah widget yang memiliki kemampuan untuk memperbarui tampilan secara dinamis sesuai perubahan data atau interaksi pengguna. Widget ini memanfaatkan objek State untuk menyimpan dan mengelola data yang dapat berubah. Ketika terjadi perubahan, misalnya saat pengguna mengisi formulir atau menekan tombol tertentu, widget akan melakukan proses rebuild sehingga informasi terbaru dapat langsung ditampilkan pada layar.
+---
 
-\---
+# 3. Struktur Project
 
-
-
-\## 2. Tentang Aplikasi
-
-\---
-
-\*\*\*Teknologi yang digunakan\*\*\*
-
-\-Flutter
-
-\-Dart
-
-\-Material Design
-
-\-Google Fonts (Poppins)
-
-
-
-\*\*\*Fitur Aplikasi\*\*\*
-
-\-Home Page sebagai halaman utama dan navigasi.
-
-\-Form Mahasiswa untuk menginput data Nama, NIM, dan Kelas.
-
-\-Profil Developer untuk menampilkan informasi pengembang.
-
-\-SnackBar sebagai notifikasi saat data berhasil disimpan.
-
-\-Navigasi antar halaman menggunakan Navigator.
-
-
-
-\*\*\*Widget yang Digunakan\*\*\*
-
-StatelessWidget, StatefulWidget, Scaffold, AppBar, Container, Column, TextField, ElevatedButton, Icon, SnackBar, dan Navigator.
-
-\---
-
-
-
-\## 3. Struktur Project
-
-\---
-
-```
-
+```text
 lib/
-
 │
-
 ├── main.dart
-
 │
-
-└── pages/
-
-&#x20;   ├── home\_page.dart
-
-&#x20;   ├── form\_mahasiswa\_page.dart
-
-&#x20;   └── profil\_page.dart
-
+├── pages/
+│   ├── home_page.dart
+│   ├── form_mahasiswa_page.dart
+│   └── profil_page.dart
+│
 └── theme/
-
-&#x20;   └── apps\_colors.dart
-
-
-
+    └── app_colors.dart
 ```
 
+---
 
+# 4. Source Code
 
-\---
+## main.dart
 
-
-
-\## 4. Source Code
-
-\---
-
-\*\*\*main.dart\*\*\*
-
-```
-
+```dart
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'package:google\_fonts/google\_fonts.dart';
-
-
-
-import 'pages/home\_page.dart';
-
-import 'theme/app\_colors.dart';
-
-
+import 'pages/home_page.dart';
+import 'theme/app_colors.dart';
 
 void main() {
-
-&#x20; runApp(const MyApp());
-
+  runApp(const MyApp());
 }
-
-
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-&#x20; const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
 
+      theme: ThemeData(
+        scaffoldBackgroundColor: AppColors.softPink,
 
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.primaryMaroon,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+        ),
 
-&#x20; @override
+        textTheme: GoogleFonts.poppinsTextTheme(),
+      ),
 
-&#x20; Widget build(BuildContext context) {
-
-&#x20;   return MaterialApp(
-
-&#x20;     debugShowCheckedModeBanner: false,
-
-
-
-&#x20;     theme: ThemeData(
-
-&#x20;       scaffoldBackgroundColor: AppColors.softPink,
-
-
-
-&#x20;       appBarTheme: const AppBarTheme(
-
-&#x20;         backgroundColor: AppColors.primaryMaroon,
-
-&#x20;         foregroundColor: Colors.white,
-
-&#x20;         centerTitle: true,
-
-&#x20;       ),
-
-
-
-&#x20;       textTheme: GoogleFonts.poppinsTextTheme(),
-
-&#x20;     ),
-
-
-
-&#x20;     home: const HomePage(),
-
-&#x20;   );
-
-&#x20; }
-
+      home: const HomePage(),
+    );
+  }
 }
-
 ```
 
-File main.dart merupakan file utama yang menjalankan aplikasi Flutter. Pada file ini dilakukan konfigurasi awal aplikasi, seperti pengaturan tema, warna utama aplikasi, font yang digunakan, serta menentukan halaman pertama yang ditampilkan yaitu HomePage.
+### Deskripsi
 
+File `main.dart` merupakan file utama yang digunakan untuk menjalankan aplikasi Flutter. Pada file ini dilakukan konfigurasi tema aplikasi, warna utama, font Poppins, serta menentukan halaman awal aplikasi yaitu `HomePage`.
 
+---
 
-\*\*\*home\_page.dart\*\*\*
-
-```
-
+## home_page.dart
+```dart
 import 'package:flutter/material.dart';
-
-import 'form\_mahasiswa\_page.dart';
-
-import 'profil\_page.dart';
-
-
+import 'form_mahasiswa_page.dart';
+import 'profil_page.dart';
 
 class HomePage extends StatelessWidget {
-
-&#x20; const HomePage({super.key});
-
-
-
-&#x20; static const Color primaryMaroon = Color(0xFF7A1F2B);
-
-&#x20; static const Color backgroundColor = Color(0xFFFDF6F7);
-
-&#x20; static const Color cardColor = Colors.white;
-
-
-
-&#x20; @override
-
-&#x20; Widget build(BuildContext context) {
-
-&#x20;   return Scaffold(
-
-&#x20;     backgroundColor: backgroundColor,
-
-
-
-&#x20;     appBar: AppBar(
-
-&#x20;       elevation: 0,
-
-&#x20;       centerTitle: true,
-
-&#x20;       backgroundColor: primaryMaroon,
-
-&#x20;       title: const Text(
-
-&#x20;         "Data Mahasiswa",
-
-&#x20;         style: TextStyle(
-
-&#x20;           color: Colors.white,
-
-&#x20;           fontWeight: FontWeight.bold,
-
-&#x20;         ),
-
-&#x20;       ),
-
-&#x20;     ),
-
-
-
-&#x20;     body: SingleChildScrollView(
-
-&#x20;       padding: const EdgeInsets.all(20),
-
-
-
-&#x20;       child: Column(
-
-&#x20;         crossAxisAlignment: CrossAxisAlignment.start,
-
-&#x20;         children: \[
-
-
-
-&#x20;           // HERO CARD
-
-&#x20;           Container(
-
-&#x20;             width: double.infinity,
-
-&#x20;             padding: const EdgeInsets.all(24),
-
-
-
-&#x20;             decoration: BoxDecoration(
-
-&#x20;               color: primaryMaroon,
-
-&#x20;               borderRadius: BorderRadius.circular(24),
-
-&#x20;             ),
-
-
-
-&#x20;             child: const Column(
-
-&#x20;               crossAxisAlignment: CrossAxisAlignment.start,
-
-&#x20;               children: \[
-
-
-
-&#x20;                 CircleAvatar(
-
-&#x20;                   radius: 28,
-
-&#x20;                   backgroundColor: Colors.white24,
-
-&#x20;                   child: Icon(
-
-&#x20;                     Icons.school,
-
-&#x20;                     color: Colors.white,
-
-&#x20;                     size: 30,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-
-
-&#x20;                 SizedBox(height: 20),
-
-
-
-&#x20;                 Text(
-
-&#x20;                   "Selamat Datang!",
-
-&#x20;                   style: TextStyle(
-
-&#x20;                     color: Colors.white,
-
-&#x20;                     fontSize: 26,
-
-&#x20;                     fontWeight: FontWeight.bold,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-
-
-&#x20;                 SizedBox(height: 8),
-
-
-
-&#x20;                 Text(
-
-&#x20;                   "Kelola data mahasiswa dengan mudah dan cepat melalui aplikasi ini.",
-
-&#x20;                   style: TextStyle(
-
-&#x20;                     color: Colors.white70,
-
-&#x20;                     fontSize: 14,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 30),
-
-
-
-&#x20;           const Text(
-
-&#x20;             "MENU UTAMA",
-
-&#x20;             style: TextStyle(
-
-&#x20;               fontWeight: FontWeight.bold,
-
-&#x20;               color: primaryMaroon,
-
-&#x20;               letterSpacing: 1.2,
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 15),
-
-
-
-&#x20;           // FORM MAHASISWA
-
-&#x20;           \_menuCard(
-
-&#x20;             icon: Icons.edit\_document,
-
-&#x20;             title: "Form Mahasiswa",
-
-&#x20;             subtitle: "Input dan simpan data mahasiswa",
-
-&#x20;             onTap: () {
-
-&#x20;               Navigator.push(
-
-&#x20;                 context,
-
-&#x20;                 MaterialPageRoute(
-
-&#x20;                   builder: (context) =>
-
-&#x20;                       const FormMahasiswaPage(),
-
-&#x20;                 ),
-
-&#x20;               );
-
-&#x20;             },
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 15),
-
-
-
-&#x20;           // PROFIL DEVELOPER
-
-&#x20;           \_menuCard(
-
-&#x20;             icon: Icons.person,
-
-&#x20;             title: "Profil Developer",
-
-&#x20;             subtitle: "Informasi pembuat aplikasi",
-
-&#x20;             onTap: () {
-
-&#x20;               Navigator.push(
-
-&#x20;                 context,
-
-&#x20;                 MaterialPageRoute(
-
-&#x20;                   builder: (context) =>
-
-&#x20;                       const ProfilPage(),
-
-&#x20;                 ),
-
-&#x20;               );
-
-&#x20;             },
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 25),
-
-
-
-&#x20;           Container(
-
-&#x20;             padding: const EdgeInsets.all(16),
-
-
-
-&#x20;             decoration: BoxDecoration(
-
-&#x20;               color: const Color(0xFFF8EDEE),
-
-&#x20;               borderRadius: BorderRadius.circular(16),
-
-&#x20;             ),
-
-
-
-&#x20;             child: const Row(
-
-&#x20;               children: \[
-
-
-
-&#x20;                 Icon(
-
-&#x20;                   Icons.info\_outline,
-
-&#x20;                   color: primaryMaroon,
-
-&#x20;                 ),
-
-
-
-&#x20;                 SizedBox(width: 10),
-
-
-
-&#x20;                 Expanded(
-
-&#x20;                   child: Text(
-
-&#x20;                     "Pilih menu di atas untuk mulai mengelola data mahasiswa.",
-
-&#x20;                     style: TextStyle(
-
-&#x20;                       color: Colors.black87,
-
-&#x20;                     ),
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-&#x20;           ),
-
-&#x20;         ],
-
-&#x20;       ),
-
-&#x20;     ),
-
-&#x20;   );
-
-&#x20; }
-
-
-
-&#x20; static Widget \_menuCard({
-
-&#x20;   required IconData icon,
-
-&#x20;   required String title,
-
-&#x20;   required String subtitle,
-
-&#x20;   required VoidCallback onTap,
-
-&#x20; }) {
-
-&#x20;   return InkWell(
-
-&#x20;     borderRadius: BorderRadius.circular(20),
-
-&#x20;     onTap: onTap,
-
-
-
-&#x20;     child: Container(
-
-&#x20;       padding: const EdgeInsets.all(16),
-
-
-
-&#x20;       decoration: BoxDecoration(
-
-&#x20;         color: cardColor,
-
-&#x20;         borderRadius: BorderRadius.circular(20),
-
-
-
-&#x20;         boxShadow: \[
-
-&#x20;           BoxShadow(
-
-&#x20;             color: Colors.black.withOpacity(0.05),
-
-&#x20;             blurRadius: 12,
-
-&#x20;             offset: const Offset(0, 4),
-
-&#x20;           ),
-
-&#x20;         ],
-
-&#x20;       ),
-
-
-
-&#x20;       child: Row(
-
-&#x20;         children: \[
-
-
-
-&#x20;           Container(
-
-&#x20;             padding: const EdgeInsets.all(12),
-
-
-
-&#x20;             decoration: BoxDecoration(
-
-&#x20;               color: const Color(0xFFF8EDEE),
-
-&#x20;               borderRadius: BorderRadius.circular(12),
-
-&#x20;             ),
-
-
-
-&#x20;             child: const Icon(
-
-&#x20;               Icons.arrow\_right\_alt,
-
-&#x20;               color: primaryMaroon,
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(width: 15),
-
-
-
-&#x20;           Expanded(
-
-&#x20;             child: Column(
-
-&#x20;               crossAxisAlignment:
-
-&#x20;                   CrossAxisAlignment.start,
-
-
-
-&#x20;               children: \[
-
-
-
-&#x20;                 Text(
-
-&#x20;                   title,
-
-&#x20;                   style: const TextStyle(
-
-&#x20;                     fontSize: 18,
-
-&#x20;                     fontWeight: FontWeight.bold,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-
-
-&#x20;                 const SizedBox(height: 4),
-
-
-
-&#x20;                 Text(
-
-&#x20;                   subtitle,
-
-&#x20;                   style: const TextStyle(
-
-&#x20;                     color: Colors.black54,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const Icon(
-
-&#x20;             Icons.chevron\_right,
-
-&#x20;             color: primaryMaroon,
-
-&#x20;           ),
-
-&#x20;         ],
-
-&#x20;       ),
-
-&#x20;     ),
-
-&#x20;   );
-
-&#x20; }
-
+  const HomePage({super.key});
+
+  static const Color primaryMaroon = Color(0xFF7A1F2B);
+  static const Color backgroundColor = Color(0xFFFDF6F7);
+  static const Color cardColor = Colors.white;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: backgroundColor,
+
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: primaryMaroon,
+        title: const Text(
+          "Data Mahasiswa",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
+
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+
+            // HERO CARD
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(24),
+
+              decoration: BoxDecoration(
+                color: primaryMaroon,
+                borderRadius: BorderRadius.circular(24),
+              ),
+
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  CircleAvatar(
+                    radius: 28,
+                    backgroundColor: Colors.white24,
+                    child: Icon(
+                      Icons.school,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
+
+                  SizedBox(height: 20),
+
+                  Text(
+                    "Selamat Datang!",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  SizedBox(height: 8),
+
+                  Text(
+                    "Kelola data mahasiswa dengan mudah dan cepat melalui aplikasi ini.",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "MENU UTAMA",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: primaryMaroon,
+                letterSpacing: 1.2,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            // FORM MAHASISWA
+            _menuCard(
+              icon: Icons.edit_document,
+              title: "Form Mahasiswa",
+              subtitle: "Input dan simpan data mahasiswa",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const FormMahasiswaPage(),
+                  ),
+                );
+              },
+            ),
+
+            const SizedBox(height: 15),
+
+            // PROFIL DEVELOPER
+            _menuCard(
+              icon: Icons.person,
+              title: "Profil Developer",
+              subtitle: "Informasi pembuat aplikasi",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const ProfilPage(),
+                  ),
+                );
+              },
+            ),
+
+            const SizedBox(height: 25),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+
+              decoration: BoxDecoration(
+                color: const Color(0xFFF8EDEE),
+                borderRadius: BorderRadius.circular(16),
+              ),
+
+              child: const Row(
+                children: [
+
+                  Icon(
+                    Icons.info_outline,
+                    color: primaryMaroon,
+                  ),
+
+                  SizedBox(width: 10),
+
+                  Expanded(
+                    child: Text(
+                      "Pilih menu di atas untuk mulai mengelola data mahasiswa.",
+                      style: TextStyle(
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  static Widget _menuCard({
+    required IconData icon,
+    required String title,
+    required String subtitle,
+    required VoidCallback onTap,
+  }) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(20),
+      onTap: onTap,
+
+      child: Container(
+        padding: const EdgeInsets.all(16),
+
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(20),
+
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 12,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+
+        child: Row(
+          children: [
+
+            Container(
+              padding: const EdgeInsets.all(12),
+
+              decoration: BoxDecoration(
+                color: const Color(0xFFF8EDEE),
+                borderRadius: BorderRadius.circular(12),
+              ),
+
+              child: const Icon(
+                Icons.arrow_right_alt,
+                color: primaryMaroon,
+              ),
+            ),
+
+            const SizedBox(width: 15),
+
+            Expanded(
+              child: Column(
+                crossAxisAlignment:
+                    CrossAxisAlignment.start,
+
+                children: [
+
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  const SizedBox(height: 4),
+
+                  Text(
+                    subtitle,
+                    style: const TextStyle(
+                      color: Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const Icon(
+              Icons.chevron_right,
+              color: primaryMaroon,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
-
 ```
 
-File home\_page.dart berisi tampilan halaman utama aplikasi. Halaman ini menampilkan informasi singkat aplikasi serta menu navigasi menuju halaman Form Mahasiswa dan Profil Developer menggunakan Navigator.push().
+### Deskripsi
 
+File `home_page.dart` berfungsi sebagai halaman utama aplikasi. Halaman ini menampilkan menu navigasi menuju halaman Form Mahasiswa dan Profil Developer menggunakan `Navigator.push()`.
 
+---
 
-\*\*\*form\_mahasiswa\_page.dart\*\*\*
+## form_mahasiswa_page.dart
 
-```
-
+```dart
 import 'package:flutter/material.dart';
-
-
 
 class FormMahasiswaPage extends StatefulWidget {
+  const FormMahasiswaPage({super.key});
 
-&#x20; const FormMahasiswaPage({super.key});
-
-
-
-&#x20; @override
-
-&#x20; State<FormMahasiswaPage> createState() =>
-
-&#x20;     \_FormMahasiswaPageState();
-
+  @override
+  State<FormMahasiswaPage> createState() =>
+      _FormMahasiswaPageState();
 }
 
-
-
-class \_FormMahasiswaPageState
-
-&#x20;   extends State<FormMahasiswaPage> {
-
-
-
-&#x20; static const Color primaryMaroon =
-
-&#x20;     Color(0xFF7A1F2B);
-
-
-
-&#x20; final namaController = TextEditingController();
-
-&#x20; final nimController = TextEditingController();
-
-&#x20; final kelasController = TextEditingController();
-
-
-
-&#x20; String nama = "";
-
-&#x20; String nim = "";
-
-&#x20; String kelas = "";
-
-
-
-&#x20; void simpanData() {
-
-&#x20;   setState(() {
-
-&#x20;     nama = namaController.text;
-
-&#x20;     nim = nimController.text;
-
-&#x20;     kelas = kelasController.text;
-
-&#x20;   });
-
-
-
-&#x20;   ScaffoldMessenger.of(context).showSnackBar(
-
-&#x20;     const SnackBar(
-
-&#x20;       backgroundColor: primaryMaroon,
-
-&#x20;       content: Text(
-
-&#x20;         "Data mahasiswa berhasil disimpan",
-
-&#x20;       ),
-
-&#x20;     ),
-
-&#x20;   );
-
-&#x20; }
-
-
-
-&#x20; void resetForm() {
-
-&#x20;   namaController.clear();
-
-&#x20;   nimController.clear();
-
-&#x20;   kelasController.clear();
-
-
-
-&#x20;   setState(() {
-
-&#x20;     nama = "";
-
-&#x20;     nim = "";
-
-&#x20;     kelas = "";
-
-&#x20;   });
-
-&#x20; }
-
-
-
-&#x20; @override
-
-&#x20; Widget build(BuildContext context) {
-
-&#x20;   return Scaffold(
-
-&#x20;     backgroundColor: const Color(0xFFFDF6F7),
-
-
-
-&#x20;     appBar: AppBar(
-
-&#x20;       centerTitle: true,
-
-&#x20;       backgroundColor: primaryMaroon,
-
-&#x20;       foregroundColor: Colors.white,
-
-&#x20;       title: const Text(
-
-&#x20;         "Form Mahasiswa",
-
-&#x20;       ),
-
-&#x20;     ),
-
-
-
-&#x20;     body: SingleChildScrollView(
-
-&#x20;       padding: const EdgeInsets.all(20),
-
-
-
-&#x20;       child: Column(
-
-&#x20;         crossAxisAlignment:
-
-&#x20;             CrossAxisAlignment.start,
-
-
-
-&#x20;         children: \[
-
-
-
-&#x20;           const Text(
-
-&#x20;             "Input Data Mahasiswa",
-
-&#x20;             style: TextStyle(
-
-&#x20;               fontSize: 24,
-
-&#x20;               fontWeight: FontWeight.bold,
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 5),
-
-
-
-&#x20;           const Text(
-
-&#x20;             "Masukkan data mahasiswa dengan lengkap.",
-
-&#x20;             style: TextStyle(
-
-&#x20;               color: Colors.black54,
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 20),
-
-
-
-&#x20;           Container(
-
-&#x20;             padding: const EdgeInsets.all(20),
-
-
-
-&#x20;             decoration: BoxDecoration(
-
-&#x20;               color: Colors.white,
-
-&#x20;               borderRadius:
-
-&#x20;                   BorderRadius.circular(20),
-
-
-
-&#x20;               boxShadow: \[
-
-&#x20;                 BoxShadow(
-
-&#x20;                   color:
-
-&#x20;                       Colors.black.withOpacity(0.05),
-
-&#x20;                   blurRadius: 10,
-
-&#x20;                   offset: const Offset(0, 4),
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-
-
-&#x20;             child: Column(
-
-&#x20;               children: \[
-
-
-
-&#x20;                 TextField(
-
-&#x20;                   controller: namaController,
-
-
-
-&#x20;                   decoration: InputDecoration(
-
-&#x20;                     labelText: "Nama Lengkap",
-
-&#x20;                     prefixIcon:
-
-&#x20;                         const Icon(Icons.person),
-
-&#x20;                     border:
-
-&#x20;                         OutlineInputBorder(
-
-&#x20;                       borderRadius:
-
-&#x20;                           BorderRadius.circular(
-
-&#x20;                               12),
-
-&#x20;                     ),
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-
-
-&#x20;                 const SizedBox(height: 15),
-
-
-
-&#x20;                 TextField(
-
-&#x20;                   controller: nimController,
-
-
-
-&#x20;                   decoration: InputDecoration(
-
-&#x20;                     labelText: "NIM",
-
-&#x20;                     prefixIcon:
-
-&#x20;                         const Icon(Icons.badge),
-
-&#x20;                     border:
-
-&#x20;                         OutlineInputBorder(
-
-&#x20;                       borderRadius:
-
-&#x20;                           BorderRadius.circular(
-
-&#x20;                               12),
-
-&#x20;                     ),
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-
-
-&#x20;                 const SizedBox(height: 15),
-
-
-
-&#x20;                 TextField(
-
-&#x20;                   controller: kelasController,
-
-
-
-&#x20;                   decoration: InputDecoration(
-
-&#x20;                     labelText: "Kelas",
-
-&#x20;                     prefixIcon:
-
-&#x20;                         const Icon(Icons.class\_),
-
-&#x20;                     border:
-
-&#x20;                         OutlineInputBorder(
-
-&#x20;                       borderRadius:
-
-&#x20;                           BorderRadius.circular(
-
-&#x20;                               12),
-
-&#x20;                     ),
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 20),
-
-
-
-&#x20;           SizedBox(
-
-&#x20;             width: double.infinity,
-
-
-
-&#x20;             child: ElevatedButton.icon(
-
-&#x20;               icon: const Icon(Icons.save),
-
-
-
-&#x20;               style: ElevatedButton.styleFrom(
-
-&#x20;                 backgroundColor: primaryMaroon,
-
-&#x20;                 foregroundColor: Colors.white,
-
-&#x20;                 padding:
-
-&#x20;                     const EdgeInsets.symmetric(
-
-&#x20;                   vertical: 15,
-
-&#x20;                 ),
-
-&#x20;               ),
-
-
-
-&#x20;               onPressed: simpanData,
-
-
-
-&#x20;               label: const Text(
-
-&#x20;                 "Simpan Data",
-
-&#x20;               ),
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 10),
-
-
-
-&#x20;           SizedBox(
-
-&#x20;             width: double.infinity,
-
-
-
-&#x20;             child: OutlinedButton.icon(
-
-&#x20;               icon: const Icon(Icons.refresh),
-
-
-
-&#x20;               onPressed: resetForm,
-
-
-
-&#x20;               style: OutlinedButton.styleFrom(
-
-&#x20;                 foregroundColor: primaryMaroon,
-
-&#x20;               ),
-
-
-
-&#x20;               label: const Text(
-
-&#x20;                 "Reset Form",
-
-&#x20;               ),
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 25),
-
-
-
-&#x20;           if (nama.isNotEmpty ||
-
-&#x20;               nim.isNotEmpty ||
-
-&#x20;               kelas.isNotEmpty)
-
-
-
-&#x20;             Container(
-
-&#x20;               width: double.infinity,
-
-&#x20;               padding:
-
-&#x20;                   const EdgeInsets.all(20),
-
-
-
-&#x20;               decoration: BoxDecoration(
-
-&#x20;                 color: const Color(0xFFF8EDEE),
-
-&#x20;                 borderRadius:
-
-&#x20;                     BorderRadius.circular(20),
-
-&#x20;               ),
-
-
-
-&#x20;               child: Column(
-
-&#x20;                 crossAxisAlignment:
-
-&#x20;                     CrossAxisAlignment.start,
-
-
-
-&#x20;                 children: \[
-
-
-
-&#x20;                   Row(
-
-&#x20;                     children: const \[
-
-
-
-&#x20;                       Icon(
-
-&#x20;                         Icons.check\_circle,
-
-&#x20;                         color: primaryMaroon,
-
-&#x20;                       ),
-
-
-
-&#x20;                       SizedBox(width: 10),
-
-
-
-&#x20;                       Text(
-
-&#x20;                         "Data Tersimpan",
-
-&#x20;                         style: TextStyle(
-
-&#x20;                           fontSize: 18,
-
-&#x20;                           fontWeight:
-
-&#x20;                               FontWeight.bold,
-
-&#x20;                         ),
-
-&#x20;                       ),
-
-&#x20;                     ],
-
-&#x20;                   ),
-
-
-
-&#x20;                   const Divider(),
-
-
-
-&#x20;                   Text(
-
-&#x20;                     "Nama : $nama",
-
-&#x20;                   ),
-
-
-
-&#x20;                   const SizedBox(height: 8),
-
-
-
-&#x20;                   Text(
-
-&#x20;                     "NIM : $nim",
-
-&#x20;                   ),
-
-
-
-&#x20;                   const SizedBox(height: 8),
-
-
-
-&#x20;                   Text(
-
-&#x20;                     "Kelas : $kelas",
-
-&#x20;                   ),
-
-&#x20;                 ],
-
-&#x20;               ),
-
-&#x20;             ),
-
-
-
-&#x20;           const SizedBox(height: 25),
-
-
-
-&#x20;           SizedBox(
-
-&#x20;             width: double.infinity,
-
-
-
-&#x20;             child: ElevatedButton.icon(
-
-&#x20;               icon:
-
-&#x20;                   const Icon(Icons.arrow\_back),
-
-
-
-&#x20;               style: ElevatedButton.styleFrom(
-
-&#x20;                 backgroundColor:
-
-&#x20;                     Colors.grey.shade700,
-
-&#x20;                 foregroundColor:
-
-&#x20;                     Colors.white,
-
-&#x20;               ),
-
-
-
-&#x20;               onPressed: () {
-
-&#x20;                 Navigator.pop(context);
-
-&#x20;               },
-
-
-
-&#x20;               label: const Text(
-
-&#x20;                 "Kembali",
-
-&#x20;               ),
-
-&#x20;             ),
-
-&#x20;           ),
-
-&#x20;         ],
-
-&#x20;       ),
-
-&#x20;     ),
-
-&#x20;   );
-
-&#x20; }
-
+class _FormMahasiswaPageState
+    extends State<FormMahasiswaPage> {
+
+  static const Color primaryMaroon =
+      Color(0xFF7A1F2B);
+
+  final namaController = TextEditingController();
+  final nimController = TextEditingController();
+  final kelasController = TextEditingController();
+
+  String nama = "";
+  String nim = "";
+  String kelas = "";
+
+  void simpanData() {
+    setState(() {
+      nama = namaController.text;
+      nim = nimController.text;
+      kelas = kelasController.text;
+    });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        backgroundColor: primaryMaroon,
+        content: Text(
+          "Data mahasiswa berhasil disimpan",
+        ),
+      ),
+    );
+  }
+
+  void resetForm() {
+    namaController.clear();
+    nimController.clear();
+    kelasController.clear();
+
+    setState(() {
+      nama = "";
+      nim = "";
+      kelas = "";
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFFDF6F7),
+
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: primaryMaroon,
+        foregroundColor: Colors.white,
+        title: const Text(
+          "Form Mahasiswa",
+        ),
+      ),
+
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
+
+        child: Column(
+          crossAxisAlignment:
+              CrossAxisAlignment.start,
+
+          children: [
+
+            const Text(
+              "Input Data Mahasiswa",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 5),
+
+            const Text(
+              "Masukkan data mahasiswa dengan lengkap.",
+              style: TextStyle(
+                color: Colors.black54,
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            Container(
+              padding: const EdgeInsets.all(20),
+
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius:
+                    BorderRadius.circular(20),
+
+                boxShadow: [
+                  BoxShadow(
+                    color:
+                        Colors.black.withOpacity(0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+
+              child: Column(
+                children: [
+
+                  TextField(
+                    controller: namaController,
+
+                    decoration: InputDecoration(
+                      labelText: "Nama Lengkap",
+                      prefixIcon:
+                          const Icon(Icons.person),
+                      border:
+                          OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.circular(
+                                12),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 15),
+
+                  TextField(
+                    controller: nimController,
+
+                    decoration: InputDecoration(
+                      labelText: "NIM",
+                      prefixIcon:
+                          const Icon(Icons.badge),
+                      border:
+                          OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.circular(
+                                12),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 15),
+
+                  TextField(
+                    controller: kelasController,
+
+                    decoration: InputDecoration(
+                      labelText: "Kelas",
+                      prefixIcon:
+                          const Icon(Icons.class_),
+                      border:
+                          OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.circular(
+                                12),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            SizedBox(
+              width: double.infinity,
+
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.save),
+
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: primaryMaroon,
+                  foregroundColor: Colors.white,
+                  padding:
+                      const EdgeInsets.symmetric(
+                    vertical: 15,
+                  ),
+                ),
+
+                onPressed: simpanData,
+
+                label: const Text(
+                  "Simpan Data",
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            SizedBox(
+              width: double.infinity,
+
+              child: OutlinedButton.icon(
+                icon: const Icon(Icons.refresh),
+
+                onPressed: resetForm,
+
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: primaryMaroon,
+                ),
+
+                label: const Text(
+                  "Reset Form",
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            if (nama.isNotEmpty ||
+                nim.isNotEmpty ||
+                kelas.isNotEmpty)
+
+              Container(
+                width: double.infinity,
+                padding:
+                    const EdgeInsets.all(20),
+
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF8EDEE),
+                  borderRadius:
+                      BorderRadius.circular(20),
+                ),
+
+                child: Column(
+                  crossAxisAlignment:
+                      CrossAxisAlignment.start,
+
+                  children: [
+
+                    Row(
+                      children: const [
+
+                        Icon(
+                          Icons.check_circle,
+                          color: primaryMaroon,
+                        ),
+
+                        SizedBox(width: 10),
+
+                        Text(
+                          "Data Tersimpan",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight:
+                                FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const Divider(),
+
+                    Text(
+                      "Nama : $nama",
+                    ),
+
+                    const SizedBox(height: 8),
+
+                    Text(
+                      "NIM : $nim",
+                    ),
+
+                    const SizedBox(height: 8),
+
+                    Text(
+                      "Kelas : $kelas",
+                    ),
+                  ],
+                ),
+              ),
+
+            const SizedBox(height: 25),
+
+            SizedBox(
+              width: double.infinity,
+
+              child: ElevatedButton.icon(
+                icon:
+                    const Icon(Icons.arrow_back),
+
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      Colors.grey.shade700,
+                  foregroundColor:
+                      Colors.white,
+                ),
+
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+
+                label: const Text(
+                  "Kembali",
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
-
 ```
 
-File form\_mahasiswa\_page.dart digunakan untuk mengelola input data mahasiswa. Halaman ini menggunakan StatefulWidget agar data yang dimasukkan pengguna dapat diperbarui dan ditampilkan secara langsung. Selain itu, terdapat fitur penyimpanan data dan notifikasi SnackBar ketika data berhasil disimpan.
+### Deskripsi
 
+File `form_mahasiswa_page.dart` digunakan untuk menerima input data mahasiswa berupa nama, NIM, dan kelas. Halaman ini menggunakan `StatefulWidget` agar data dapat diperbarui secara dinamis menggunakan `setState()`. Selain itu terdapat fitur penyimpanan data dan notifikasi menggunakan `SnackBar`.
 
+---
 
-\*\*\*profil\_page.dart\*\*\*
+## profil_page.dart
 
-```
+### Deskripsi
 
-import 'package:flutter/material.dart';
+File `profil_page.dart` menampilkan informasi mengenai pengembang aplikasi seperti nama, NIM, program studi, dan email. Halaman ini juga menyediakan tombol kembali menggunakan `Navigator.pop()`.
 
+---
 
+# 5. Screenshot Mobile
 
-class ProfilPage extends StatelessWidget {
+## 1. Home Page
 
-&#x20; const ProfilPage({super.key});
+![Home Page](assets/1.png)
 
+## 2. Form Mahasiswa
 
+![Form Mahasiswa](assets/2.png)
 
-&#x20; static const Color primaryMaroon =
+## 3. Profile Page
 
-&#x20;     Color(0xFF7A1F2B);
+![Profile Page](assets/3.png)
 
+---
 
+# Kesimpulan
 
-&#x20; @override
-
-&#x20; Widget build(BuildContext context) {
-
-&#x20;   return Scaffold(
-
-&#x20;     backgroundColor: const Color(0xFFFDF6F7),
-
-
-
-&#x20;     appBar: AppBar(
-
-&#x20;       centerTitle: true,
-
-&#x20;       backgroundColor: primaryMaroon,
-
-&#x20;       foregroundColor: Colors.white,
-
-&#x20;       title: const Text(
-
-&#x20;         "Profil Developer",
-
-&#x20;       ),
-
-&#x20;     ),
-
-
-
-&#x20;     body: SingleChildScrollView(
-
-&#x20;       padding: const EdgeInsets.all(20),
-
-
-
-&#x20;       child: Column(
-
-&#x20;         children: \[
-
-
-
-&#x20;           // HEADER PROFILE
-
-&#x20;           Container(
-
-&#x20;             width: double.infinity,
-
-&#x20;             padding: const EdgeInsets.all(24),
-
-
-
-&#x20;             decoration: BoxDecoration(
-
-&#x20;               color: primaryMaroon,
-
-&#x20;               borderRadius:
-
-&#x20;                   BorderRadius.circular(24),
-
-&#x20;             ),
-
-
-
-&#x20;             child: const Column(
-
-&#x20;               children: \[
-
-
-
-&#x20;                 CircleAvatar(
-
-&#x20;                   radius: 50,
-
-&#x20;                   backgroundColor:
-
-&#x20;                       Colors.white24,
-
-&#x20;                   child: Icon(
-
-&#x20;                     Icons.person,
-
-&#x20;                     size: 55,
-
-&#x20;                     color: Colors.white,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-
-
-&#x20;                 SizedBox(height: 15),
-
-
-
-&#x20;                 Text(
-
-&#x20;                   "Nabila Shasya Sabrina",
-
-&#x20;                   textAlign: TextAlign.center,
-
-&#x20;                   style: TextStyle(
-
-&#x20;                     color: Colors.white,
-
-&#x20;                     fontSize: 22,
-
-&#x20;                     fontWeight:
-
-&#x20;                         FontWeight.bold,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-
-
-&#x20;                 SizedBox(height: 5),
-
-
-
-&#x20;                 Text(
-
-&#x20;                   "Mahasiswa Informatika",
-
-&#x20;                   style: TextStyle(
-
-&#x20;                     color: Colors.white70,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 25),
-
-
-
-&#x20;           // CARD INFORMASI
-
-&#x20;           Container(
-
-&#x20;             width: double.infinity,
-
-&#x20;             padding: const EdgeInsets.all(20),
-
-
-
-&#x20;             decoration: BoxDecoration(
-
-&#x20;               color: Colors.white,
-
-&#x20;               borderRadius:
-
-&#x20;                   BorderRadius.circular(20),
-
-
-
-&#x20;               boxShadow: \[
-
-&#x20;                 BoxShadow(
-
-&#x20;                   color:
-
-&#x20;                       Colors.black12,
-
-&#x20;                   blurRadius: 10,
-
-&#x20;                   offset:
-
-&#x20;                       const Offset(0, 4),
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-
-
-&#x20;             child: const Column(
-
-&#x20;               children: \[
-
-
-
-&#x20;                 ListTile(
-
-&#x20;                   leading: Icon(
-
-&#x20;                     Icons.badge,
-
-&#x20;                     color: primaryMaroon,
-
-&#x20;                   ),
-
-&#x20;                   title: Text("NIM"),
-
-&#x20;                   subtitle:
-
-&#x20;                       Text("2311102039"),
-
-&#x20;                 ),
-
-
-
-&#x20;                 Divider(),
-
-
-
-&#x20;                 ListTile(
-
-&#x20;                   leading: Icon(
-
-&#x20;                     Icons.school,
-
-&#x20;                     color: primaryMaroon,
-
-&#x20;                   ),
-
-&#x20;                   title: Text("Program Studi"),
-
-&#x20;                   subtitle:
-
-&#x20;                       Text("S1 Informatika"),
-
-&#x20;                 ),
-
-
-
-&#x20;                 Divider(),
-
-
-
-&#x20;                 ListTile(
-
-&#x20;                   leading: Icon(
-
-&#x20;                     Icons.email,
-
-&#x20;                     color: primaryMaroon,
-
-&#x20;                   ),
-
-&#x20;                   title: Text("Email"),
-
-&#x20;                   subtitle: Text(
-
-&#x20;                     "shsyaaaaa06@gmail.com",
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 20),
-
-
-
-&#x20;           // CARD DESKRIPSI
-
-&#x20;           Container(
-
-&#x20;             width: double.infinity,
-
-&#x20;             padding: const EdgeInsets.all(20),
-
-
-
-&#x20;             decoration: BoxDecoration(
-
-&#x20;               color: const Color(
-
-&#x20;                   0xFFF8EDEE),
-
-&#x20;               borderRadius:
-
-&#x20;                   BorderRadius.circular(20),
-
-&#x20;             ),
-
-
-
-&#x20;             child: const Column(
-
-&#x20;               crossAxisAlignment:
-
-&#x20;                   CrossAxisAlignment.start,
-
-
-
-&#x20;               children: \[
-
-
-
-&#x20;                 Text(
-
-&#x20;                   "Tentang Aplikasi",
-
-&#x20;                   style: TextStyle(
-
-&#x20;                     fontSize: 18,
-
-&#x20;                     fontWeight:
-
-&#x20;                         FontWeight.bold,
-
-&#x20;                   ),
-
-&#x20;                 ),
-
-
-
-&#x20;                 SizedBox(height: 10),
-
-
-
-&#x20;                 Text(
-
-&#x20;                   "Aplikasi Flutter Form Mahasiswa by Nabila Shasya Sabrina.",
-
-&#x20;                   textAlign:
-
-&#x20;                       TextAlign.justify,
-
-&#x20;                 ),
-
-&#x20;               ],
-
-&#x20;             ),
-
-&#x20;           ),
-
-
-
-&#x20;           const SizedBox(height: 25),
-
-
-
-&#x20;           SizedBox(
-
-&#x20;             width: double.infinity,
-
-
-
-&#x20;             child: ElevatedButton.icon(
-
-&#x20;               icon: const Icon(
-
-&#x20;                 Icons.arrow\_back,
-
-&#x20;               ),
-
-
-
-&#x20;               style:
-
-&#x20;                   ElevatedButton.styleFrom(
-
-&#x20;                 backgroundColor:
-
-&#x20;                     primaryMaroon,
-
-&#x20;                 foregroundColor:
-
-&#x20;                     Colors.white,
-
-&#x20;                 padding:
-
-&#x20;                     const EdgeInsets
-
-&#x20;                         .symmetric(
-
-&#x20;                   vertical: 15,
-
-&#x20;                 ),
-
-&#x20;               ),
-
-
-
-&#x20;               onPressed: () {
-
-&#x20;                 Navigator.pop(
-
-&#x20;                     context);
-
-&#x20;               },
-
-
-
-&#x20;               label: const Text(
-
-&#x20;                 "Kembali",
-
-&#x20;               ),
-
-&#x20;             ),
-
-&#x20;           ),
-
-&#x20;         ],
-
-&#x20;       ),
-
-&#x20;     ),
-
-&#x20;   );
-
-&#x20; }
-
-}
-
-```
-
-File profil\_page.dart berisi informasi mengenai pengembang aplikasi. Halaman ini menampilkan identitas developer serta deskripsi singkat aplikasi. Pengguna dapat kembali ke halaman sebelumnya menggunakan tombol yang memanfaatkan Navigator.pop().
-
-
-
-\---
-
-
-
-\## 5. Screenshot Mobile
-
-\---
-
-\*\*\*1. Home Page\*\*\*
-
-!\[Home Page](assets/1.png)
-
-
-
-\*\*\*2. Form Mahasiswa\*\*\*
-
-!\[Form Mahasiswa](assets/2.png)
-
-
-
-\*\*\*3. Profile Page\*\*\*
-
-!\[Profile Page](assets/3.png)
-
-\---
-
-
-
-\## Kesimpulan
-
-\---
-
-Aplikasi tersebut berhasil dibuat menggunakan Flutter dengan menerapkan konsep dasar pengembangan aplikasi mobile, seperti penggunaan StatefulWidget dan StatelessWidget, navigasi antar halaman menggunakan Navigator, penggunaan SnackBar sebagai notifikasi, serta desain antarmuka yang modern dengan tema warna maroon dan putih. Aplikasi ini dapat digunakan sebagai media sederhana untuk menginput dan menampilkan data mahasiswa.
-
+Aplikasi Form Mahasiswa berhasil dibuat menggunakan Flutter dengan menerapkan konsep dasar pengembangan aplikasi mobile seperti penggunaan `StatefulWidget`, `StatelessWidget`, navigasi antar halaman menggunakan `Navigator`, pengelolaan input menggunakan `TextEditingController`, serta penggunaan `SnackBar` sebagai notifikasi. Tampilan aplikasi dibuat menggunakan Material Design dengan tema warna maroon dan putih sehingga menghasilkan antarmuka yang sederhana dan mudah digunakan.
