@@ -8,6 +8,7 @@
 <br>
 
 <img src="assets/logo.jpeg" alt="Logo" width="300">
+<h3>MODUL 7 <br> Flutter Mobile</h3>
 
 <br><br>
 
