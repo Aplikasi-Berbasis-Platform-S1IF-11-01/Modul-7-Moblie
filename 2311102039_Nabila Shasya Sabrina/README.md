@@ -6,7 +6,7 @@
 
 &#x20; <br />
 
-&#x20; <h3>MODUL 2 <br> HTML</h3>
+&#x20; <h3>MODUL 7 <br> Flutter Mobile</h3>
 
 &#x20; <br />
 
@@ -1852,19 +1852,19 @@ File profil\_page.dart berisi informasi mengenai pengembang aplikasi. Halaman in
 
 \*\*\*1. Home Page\*\*\*
 
-!\[Home Page](assets/1.png)
+!\[](assets/1.png)
 
 
 
 \*\*\*2. Form Mahasiswa\*\*\*
 
-!\[Form Mahasiswa](assets/2.png)
+!\[](assets/2.png)
 
 
 
 \*\*\*3. Profile Page\*\*\*
 
-!\[Profile Page](assets/3.png)
+!\[](assets/3.png)
 
 \---
 
