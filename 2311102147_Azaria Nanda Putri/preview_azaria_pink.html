@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — Azaria's Data Mahasiswa App 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #E8739A;
+    --pink-light: #F4A7C3;
+    --pink-pale: #FFD6E7;
+    --pink-bg: #FFF0F5;
+    --pink-card: #FFECF3;
+    --pink-border: #FFCCDE;
+    --text-dark: #8B4A62;
+    --text-mid: #8B5A6E;
+    --text-light: #C49BAA;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, #2d1520 0%, #1a0d13 50%, #251018 100%);
+    min-height: 100vh;
+    padding: 48px 24px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── Dekorasi background ── */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(232,115,154,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -150px; right: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(244,167,195,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .page-header .app-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,115,154,0.15);
+    border: 1px solid rgba(232,115,154,0.3);
+    border-radius: 24px; padding: 6px 16px;
+    margin-bottom: 16px;
+  }
+  .page-header .app-badge span { font-size: 12px; color: var(--pink-light); font-weight: 600; }
+  .page-header h1 {
+    font-size: 32px; font-weight: 800; color: white; margin-bottom: 8px;
+    text-shadow: 0 0 40px rgba(232,115,154,0.4);
+  }
+  .page-header p { color: rgba(255,255,255,0.45); font-size: 13px; }
+
+  /* ── Phone layout ── */
+  .phones-row {
+    display: flex; gap: 36px;
+    flex-wrap: wrap; justify-content: center;
+    align-items: flex-start;
+  }
+
+  .phone-wrap {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 14px;
+  }
+  .phone-label {
+    color: rgba(255,255,255,0.6); font-size: 12px;
+    font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  .phone {
+    width: 310px;
+    background: var(--pink-bg);
+    border-radius: 42px;
+    overflow: hidden;
+    box-shadow:
+      0 40px 100px rgba(0,0,0,0.6),
+      0 0 0 8px #3d1a26,
+      0 0 0 10px #251018,
+      inset 0 1px 0 rgba(255,255,255,0.05);
+    display: flex; flex-direction: column;
+    animation: riseUp 0.6s ease both;
+  }
+  .phone:nth-child(1) { animation-delay: 0s; }
+  .phone:nth-child(2) { animation-delay: 0.12s; }
+  .phone:nth-child(3) { animation-delay: 0.24s; }
+
+  @keyframes riseUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Notch */
+  .notch {
+    height: 32px;
+    background: linear-gradient(to bottom, var(--pink), #e0608a);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; flex-shrink: 0;
+  }
+  .notch-time { font-size: 11px; font-weight: 700; color: white; }
+  .notch-icons { font-size: 10px; color: rgba(255,255,255,0.9); }
+
+  /* AppBar */
+  .appbar {
+    height: 54px;
+    background: linear-gradient(135deg, var(--pink), var(--pink-light));
+    display: flex; align-items: center;
+    padding: 0 14px; gap: 8px; flex-shrink: 0;
+  }
+  .appbar-back { color: white; font-size: 16px; width: 24px; }
+  .appbar-title {
+    flex: 1; text-align: center; font-size: 16px;
+    font-weight: 700; color: white;
+  }
+  .appbar-action { font-size: 18px; width: 24px; text-align: right; }
+
+  /* Scrollable body */
+  .page-body {
+    flex: 1; overflow-y: auto; scrollbar-width: none;
+    max-height: 620px;
+  }
+  .page-body::-webkit-scrollbar { display: none; }
+
+  /* ═══════════════════════ HOME PAGE ═══════════════════════ */
+  .hero {
+    background: linear-gradient(135deg, var(--pink), var(--pink-light), var(--pink-pale));
+    padding: 22px 18px 30px;
+    border-radius: 0 0 32px 32px;
+  }
+  .hero-top { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 12px; }
+  .hero-avatar {
+    width: 66px; height: 66px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%; border: 2.5px solid rgba(255,255,255,0.6);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+  }
+  .hero-deco { display: flex; flex-direction: column; gap: 4px; padding-bottom: 6px; }
+  .hero-sub { font-size: 11px; color: rgba(255,255,255,0.85); margin-bottom: 3px; }
+  .hero-title { font-size: 22px; font-weight: 800; color: white; line-height: 1.2; margin-bottom: 12px; }
+  .active-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 10px; color: white; font-weight: 500;
+  }
+
+  .stat-row { display: flex; gap: 8px; padding: 16px 14px 6px; }
+  .stat-chip {
+    flex: 1; background: white; border-radius: 14px;
+    padding: 12px 6px; text-align: center;
+    box-shadow: 0 4px 12px rgba(232,115,154,0.12);
+    border: 1px solid var(--pink-border);
+  }
+  .stat-emoji { font-size: 18px; }
+  .stat-label { font-size: 9px; font-weight: 600; color: var(--text-light); margin-top: 3px; }
+
+  .section-title {
+    font-size: 14px; font-weight: 700; color: var(--text-dark);
+    padding: 14px 14px 8px;
+  }
+
+  .menu-card {
+    margin: 0 14px 12px;
+    background: white; border-radius: 20px; padding: 14px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 6px 18px rgba(232,115,154,0.10);
+    border: 1px solid var(--pink-border);
+  }
+  .menu-emoji-wrap {
+    width: 50px; height: 50px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+    background: var(--pink-card);
+    border: 1px solid rgba(232,115,154,0.2);
+  }
+  .menu-text { flex: 1; }
+  .menu-title { font-size: 12px; font-weight: 700; color: var(--text-dark); }
+  .menu-sub { font-size: 10px; color: var(--text-light); margin-top: 2px; }
+  .menu-arrow {
+    width: 30px; height: 30px; border-radius: 10px;
+    background: var(--pink-card); border: 1px solid var(--pink-border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--pink); font-size: 11px;
+  }
+
+  .quote-card {
+    margin: 4px 14px 16px;
+    background: linear-gradient(135deg, var(--pink-card), #FFF8FB);
+    border-radius: 18px; padding: 14px 16px;
+    display: flex; align-items: flex-start; gap: 10px;
+    border: 1px solid var(--pink-border);
+  }
+  .quote-emoji { font-size: 22px; flex-shrink: 0; }
+  .quote-text { font-size: 11px; color: var(--text-dark); font-style: italic; line-height: 1.6; }
+  .quote-author { font-size: 9px; color: var(--text-light); font-weight: 600; margin-top: 4px; font-style: normal; }
+
+  /* ═══════════════════════ FORM PAGE ═══════════════════════ */
+  .form-header {
+    margin: 14px; padding: 14px;
+    background: linear-gradient(135deg, var(--pink-card), #FFF5FB);
+    border-radius: 18px; border: 1px solid var(--pink-border);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .form-hicon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--pink); display: flex; align-items: center;
+    justify-content: center; font-size: 20px; flex-shrink: 0;
+  }
+  .form-htitle { font-size: 12px; font-weight: 700; color: var(--text-dark); }
+  .form-hsub { font-size: 10px; color: var(--text-light); }
+
+  .form-card {
+    margin: 0 14px; padding: 18px;
+    background: white; border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(232,115,154,0.12);
+    border: 1px solid var(--pink-border);
+  }
+  .form-title {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 700; color: var(--text-dark);
+    margin-bottom: 14px;
+  }
+  .field-group { margin-bottom: 12px; }
+  .field-lbl { font-size: 10px; font-weight: 600; color: var(--text-dark); margin-bottom: 5px; }
+  .field-inp {
+    width: 100%; padding: 9px 12px 9px 34px;
+    border: 1.5px solid var(--pink-border); border-radius: 12px;
+    font-family: 'Poppins', sans-serif; font-size: 12px; color: var(--text-dark);
+    background: white; outline: none; position: relative;
+  }
+  .field-inp:focus { border-color: var(--pink); }
+  .field-wrap { position: relative; }
+  .field-pfx { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 14px; }
+
+  .btn-pink {
+    width: 100%; padding: 12px;
+    background: linear-gradient(135deg, var(--pink), var(--pink-light));
+    border: none; border-radius: 14px; color: white;
+    font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700;
+    cursor: pointer; margin-top: 6px;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    box-shadow: 0 6px 18px rgba(232,115,154,0.4);
+  }
+
+  .snackbar {
+    margin: 10px 14px 0;
+    background: var(--pink); border-radius: 14px; padding: 10px 14px;
+    display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 14px rgba(232,115,154,0.35);
+  }
+  .snackbar-text { font-size: 11px; font-weight: 500; color: white; }
+
+  .result-card {
+    margin: 12px 14px 0;
+    background: linear-gradient(135deg, var(--pink), var(--pink-light), var(--pink-pale));
+    border-radius: 20px; padding: 16px;
+    box-shadow: 0 8px 24px rgba(232,115,154,0.4);
+  }
+  .result-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .result-title { font-size: 12px; font-weight: 700; color: white; }
+  .result-divider { border: none; border-top: 1px solid rgba(255,255,255,0.35); margin-bottom: 10px; }
+  .result-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .result-label { font-size: 10px; color: rgba(255,255,255,0.7); }
+  .result-val { font-size: 11px; color: white; font-weight: 600; }
+
+  .btn-outline {
+    margin: 12px 14px 14px;
+    padding: 12px; width: calc(100% - 28px);
+    border: 2px solid var(--pink); background: transparent;
+    border-radius: 16px; font-family: 'Poppins', sans-serif;
+    font-size: 12px; font-weight: 600; color: var(--pink); cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+
+  /* ═══════════════════════ PROFILE PAGE ═══════════════════════ */
+  .profile-hero {
+    background: linear-gradient(135deg, var(--pink), var(--pink-light), var(--pink-pale));
+    padding: 24px 18px 32px;
+    border-radius: 0 0 36px 36px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .profile-avatar-wrap { position: relative; margin-bottom: 12px; }
+  .profile-halo {
+    width: 110px; height: 110px; border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .profile-avatar {
+    width: 96px; height: 96px; border-radius: 50%;
+    background: rgba(255,255,255,0.28);
+    border: 3px solid white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 50px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  }
+  .profile-deco1 { position: absolute; top: 0; right: -10px; font-size: 14px; opacity: 0.6; }
+  .profile-deco2 { position: absolute; bottom: 4px; left: -8px; font-size: 11px; opacity: 0.5; }
+  .profile-name { font-size: 20px; font-weight: 800; color: white; margin-bottom: 4px; text-align: center; }
+  .profile-role { font-size: 11px; color: rgba(255,255,255,0.8); margin-bottom: 10px; }
+  .profile-badges { display: flex; gap: 8px; }
+  .p-badge {
+    display: flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.2); border-radius: 16px;
+    padding: 4px 10px; font-size: 10px; color: white; font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+
+  .pcard {
+    margin: 12px 14px 0;
+    background: white; border-radius: 20px; padding: 16px;
+    border: 1px solid var(--pink-border);
+    box-shadow: 0 6px 18px rgba(232,115,154,0.10);
+  }
+  .pdesc {
+    background: linear-gradient(135deg, var(--pink-card), #FFF8FB);
+    box-shadow: none;
+  }
+  .pcard-title {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 13px; font-weight: 700; color: var(--text-dark);
+    margin-bottom: 12px;
+  }
+  .pdivider { border: none; border-top: 1.5px solid var(--pink-pale); margin-bottom: 12px; }
+  .prow { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .prow-icon {
+    width: 32px; height: 32px; border-radius: 9px;
+    background: var(--pink-card); display: flex; align-items: center;
+    justify-content: center; font-size: 14px; flex-shrink: 0;
+  }
+  .prow-lbl { font-size: 9px; color: var(--text-light); }
+  .prow-val { font-size: 12px; font-weight: 600; color: var(--text-dark); }
+  .pdesc-text { font-size: 11px; color: var(--text-mid); line-height: 1.7; }
+
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-chip {
+    display: flex; align-items: center; gap: 5px;
+    background: var(--pink-card); border-radius: 10px;
+    padding: 5px 10px; border: 1px solid var(--pink-border);
+    font-size: 10px; font-weight: 600; color: var(--pink);
+  }
+  .hobbies-row { display: flex; justify-content: space-around; }
+  .hobby-item { text-align: center; }
+  .hobby-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    background: var(--pink-card); border: 1px solid var(--pink-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin: 0 auto 4px;
+  }
+  .hobby-label { font-size: 9px; font-weight: 600; color: var(--text-light); }
+
+  .btn-pink-solid {
+    margin: 12px 14px 16px;
+    padding: 12px; width: calc(100% - 28px);
+    background: linear-gradient(135deg, var(--pink), var(--pink-light));
+    border: none; border-radius: 14px; color: white;
+    font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;
+    box-shadow: 0 6px 16px rgba(232,115,154,0.4);
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="app-badge">
+    <span>🌸</span>
+    <span>Flutter • Google Fonts Poppins • Pink Calm Theme</span>
+  </div>
+  <h1>Aplikasi Data Mahasiswa 🎀</h1>
+  <p>by Azaria Nanda Putri · 2311102099 · IF-11-01</p>
+</div>
+
+<div class="phones-row">
+
+  <!-- ═══ HOME PAGE ═══ -->
+  <div class="phone-wrap">
+    <div class="phone-label">🏠 Home Page</div>
+    <div class="phone">
+      <div class="notch">
+        <span class="notch-time">9:41</span>
+        <span class="notch-icons">📶 🔋</span>
+      </div>
+      <div class="appbar">
+        <div class="appbar-back"></div>
+        <div class="appbar-title">Data Mahasiswa</div>
+        <div class="appbar-action">🩷</div>
+      </div>
+      <div class="page-body">
+
+        <div class="hero">
+          <div class="hero-top">
+            <div class="hero-avatar">🌸</div>
+            <div class="hero-deco">
+              <span style="font-size:16px;opacity:0.6;color:white">✿</span>
+              <span style="font-size:12px;opacity:0.45;color:white">✾</span>
+            </div>
+          </div>
+          <div class="hero-sub">Haii, Selamat Datang! 🎀</div>
+          <div class="hero-title">Sistem Data<br>Mahasiswa</div>
+          <div class="active-pill">💕 Aplikasi aktif & siap dipakai</div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-chip">
+            <div class="stat-emoji">🎓</div>
+            <div class="stat-label">Mahasiswa</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-emoji">🏫</div>
+            <div class="stat-label">Kelas</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-emoji">🪪</div>
+            <div class="stat-label">NIM</div>
+          </div>
+        </div>
+
+        <div class="section-title">Menu Utama</div>
+
+        <div class="menu-card">
+          <div class="menu-emoji-wrap">🎀</div>
+          <div class="menu-text">
+            <div class="menu-title">Input Data Mahasiswa</div>
+            <div class="menu-sub">Tambahkan data nama, NIM, dan kelas</div>
+          </div>
+          <div class="menu-arrow">›</div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-emoji-wrap">🌸</div>
+          <div class="menu-text">
+            <div class="menu-title">Profil Developer</div>
+            <div class="menu-sub">Kenalan dengan si pembuat app</div>
+          </div>
+          <div class="menu-arrow">›</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-emoji">✨</div>
+          <div>
+            <div class="quote-text">"Belajar itu indah, seperti bunga yang mekar."</div>
+            <div class="quote-author">— Semangat terus! 💪🌸</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FORM PAGE ═══ -->
+  <div class="phone-wrap">
+    <div class="phone-label">📝 Form Mahasiswa</div>
+    <div class="phone">
+      <div class="notch">
+        <span class="notch-time">9:41</span>
+        <span class="notch-icons">📶 🔋</span>
+      </div>
+      <div class="appbar">
+        <div class="appbar-back">‹</div>
+        <div class="appbar-title">Input Data Mahasiswa</div>
+        <div style="width:24px"></div>
+      </div>
+      <div class="page-body">
+
+        <div class="form-header">
+          <div class="form-hicon">📝</div>
+          <div>
+            <div class="form-htitle">Form Pendataan Mahasiswa</div>
+            <div class="form-hsub">Isi semua field dengan data yang benar ya~ 🌸</div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-title">✨ Data Mahasiswa</div>
+
+          <div class="field-group">
+            <div class="field-lbl">Nama Lengkap</div>
+            <div class="field-wrap">
+              <span class="field-pfx">👩</span>
+              <input class="field-inp" value="Azaria Nanda Putri" readonly>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-lbl">NIM</div>
+            <div class="field-wrap">
+              <span class="field-pfx">🪪</span>
+              <input class="field-inp" value="2311102099" readonly>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-lbl">Kelas</div>
+            <div class="field-wrap">
+              <span class="field-pfx">🏫</span>
+              <input class="field-inp" value="IF-11-01" readonly>
+            </div>
+          </div>
+
+          <button class="btn-pink">🎀 Simpan Data</button>
+        </div>
+
+        <!-- SnackBar -->
+        <div class="snackbar">
+          <span style="font-size:16px">🎀</span>
+          <span class="snackbar-text">Data mahasiswa berhasil disimpan</span>
+        </div>
+
+        <!-- Result -->
+        <div class="result-card">
+          <div class="result-head">
+            <span style="font-size:18px">💾</span>
+            <span class="result-title">Data Berhasil Disimpan!</span>
+          </div>
+          <hr class="result-divider">
+          <div class="result-row">
+            <span style="font-size:14px">👩</span>
+            <span class="result-label">Nama :</span>
+            <span class="result-val">Azaria Nanda Putri</span>
+          </div>
+          <div class="result-row">
+            <span style="font-size:14px">🪪</span>
+            <span class="result-label">NIM :</span>
+            <span class="result-val">2311102099</span>
+          </div>
+          <div class="result-row">
+            <span style="font-size:14px">🏫</span>
+            <span class="result-label">Kelas :</span>
+            <span class="result-val">IF-11-01</span>
+          </div>
+        </div>
+
+        <button class="btn-outline">🌸 Kembali ke Beranda</button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PROFILE PAGE ═══ -->
+  <div class="phone-wrap">
+    <div class="phone-label">🌸 Profil Developer</div>
+    <div class="phone">
+      <div class="notch">
+        <span class="notch-time">9:41</span>
+        <span class="notch-icons">📶 🔋</span>
+      </div>
+      <div class="appbar">
+        <div class="appbar-back">‹</div>
+        <div class="appbar-title">Profil Developer</div>
+        <div style="width:24px"></div>
+      </div>
+      <div class="page-body">
+
+        <div class="profile-hero">
+          <div class="profile-avatar-wrap">
+            <div class="profile-halo">
+              <div class="profile-avatar">🌸</div>
+            </div>
+            <div class="profile-deco1">✿</div>
+            <div class="profile-deco2">✾</div>
+          </div>
+          <div class="profile-name">Azaria Nanda Putri</div>
+          <div class="profile-role">Flutter Developer 🎀</div>
+          <div class="profile-badges">
+            <div class="p-badge">🪪 2311102099</div>
+            <div class="p-badge">🏫 IF-11-01</div>
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="pcard">
+          <div class="pcard-title"><span>💌</span> Informasi Personal</div>
+          <hr class="pdivider">
+          <div class="prow">
+            <div class="prow-icon">👩</div>
+            <div><div class="prow-lbl">Nama Lengkap</div><div class="prow-val">Azaria Nanda Putri</div></div>
+          </div>
+          <div class="prow">
+            <div class="prow-icon">🪪</div>
+            <div><div class="prow-lbl">NIM</div><div class="prow-val">2311102099</div></div>
+          </div>
+          <div class="prow">
+            <div class="prow-icon">🏫</div>
+            <div><div class="prow-lbl">Kelas</div><div class="prow-val">IF-11-01</div></div>
+          </div>
+          <div class="prow" style="margin-bottom:0">
+            <div class="prow-icon">🎓</div>
+            <div><div class="prow-lbl">Program Studi</div><div class="prow-val">Informatika</div></div>
+          </div>
+        </div>
+
+        <!-- Desc Card -->
+        <div class="pcard pdesc">
+          <div class="pcard-title"><span>📖</span> Tentang Saya</div>
+          <div class="pdesc-text">Mahasiswi aktif Informatika yang penuh kreativitas. Tertarik di bidang mobile development, UI/UX, dan teknologi digital. Percaya kode yang baik itu seperti puisi — indah dan bermakna. 🌸</div>
+        </div>
+
+        <!-- Skills -->
+        <div class="pcard">
+          <div class="pcard-title"><span>⚡</span> Skills & Teknologi</div>
+          <div class="skills-wrap">
+            <div class="skill-chip">💙 Flutter</div>
+            <div class="skill-chip">🎯 Dart</div>
+            <div class="skill-chip">🎨 UI/UX</div>
+            <div class="skill-chip">🖌️ Figma</div>
+            <div class="skill-chip">🔥 Firebase</div>
+            <div class="skill-chip">🌿 Git</div>
+          </div>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="pcard">
+          <div class="pcard-title"><span>🌺</span> Hobi & Minat</div>
+          <div class="hobbies-row">
+            <div class="hobby-item"><div class="hobby-icon">🎵</div><div class="hobby-label">Musik</div></div>
+            <div class="hobby-item"><div class="hobby-icon">📚</div><div class="hobby-label">Membaca</div></div>
+            <div class="hobby-item"><div class="hobby-icon">✈️</div><div class="hobby-label">Traveling</div></div>
+            <div class="hobby-item"><div class="hobby-icon">☕</div><div class="hobby-label">Ngopi</div></div>
+            <div class="hobby-item"><div class="hobby-icon">🎨</div><div class="hobby-label">Menggambar</div></div>
+          </div>
+        </div>
+
+        <button class="btn-pink-solid">🏠 Kembali ke Beranda</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
