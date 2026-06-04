@@ -540,6 +540,9 @@ Halaman ini berfungsi untuk menampilkan identitas developer aplikasi.
 
 ### 1. Home Page
 ![ss_beranda](1.png)
+
+
+
 Pada halaman Home terdapat:
 - Judul aplikasi
 - Icon sekolah
